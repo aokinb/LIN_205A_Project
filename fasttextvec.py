@@ -17,3 +17,8 @@ model.save_model("model_filename.bin")
 
 # can reload this model later
 model = fasttext.load_model("model_filename.bin")
+
+import wordvecutil
+v = wordvecutil.word_vectors(model, 100000)
+# most similar words: v.near('house', 10)
+# find similarity: v.sim('house', 'dwelling')
